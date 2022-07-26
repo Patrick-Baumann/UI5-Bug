@@ -1,0 +1,54 @@
+{
+	"sap.app": {
+		"id": "sap.ui.table.sample.OData",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"default": {
+				"uri": "https://services.odata.org/TripPinRESTierService/(S(v23gwoqjt0yyuyigyjatiknp))/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "4.0"	
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sap.ui.table.sample.OData.View",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"libs": {
+				"sap.m": {},
+				"sap.ui.table": {}
+			}
+		},
+		"config": {
+			"sample": {
+				"stretch": true,
+				"files": [
+					"View.view.xml",
+					"Controller.controller.js",
+					"metadata.xml",
+					"ProductSet.json",
+					"manifest.json"
+				]
+			}
+		},
+		"models": {
+			"": {
+				"dataSource": "default",
+				"preload": true,
+				"settings": {
+					"autoExpandSelect": true,
+					"operationMode": "Server",
+					"groupId": "$direct",
+					"synchronizationMode": "None"
+				}
+			}
+		}
+	}
+}
